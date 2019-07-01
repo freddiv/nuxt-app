@@ -34,33 +34,7 @@ import Logo from '~/components/Logo.vue'
 export default {
   components: {
     Logo
-  },  data() {
-    return {
-      posts: []
-    }
   },
-  async asyncData(ctx) {
-    return {
-      posts: await ctx.app.$postRepository.index()
-    }
-  },
-  computed: {
-    slicedPosts() {
-      return this.posts.slice(-3)
-    }
-  },
-  methods: {
-    async createPost() {
-      const result = await this.$postRepository.create({
-        title: 'foo',
-        body: 'bar',
-        userId: 1
-      })
-      console.log(result)
-      // Fix ids to be unique
-      this.posts.push({ ...result, id: Number(this.posts.slice(-1)[0].id) + 1 })
-    }
-  }
 }
 </script>
 
