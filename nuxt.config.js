@@ -35,7 +35,9 @@ export default {
     '@nuxtjs/axios',
   ],
   axios: {
-    // proxyHeaders: false
+    // See https://github.com/nuxt-community/axios-module#options
+    // Set the baseURL to JSONPlaceholder API
+    baseURL: 'https://jsonplaceholder.typicode.com/'
   },
   /*
   ** Build configuration
