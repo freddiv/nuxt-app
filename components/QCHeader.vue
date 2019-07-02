@@ -2,14 +2,11 @@
 	<mdb-navbar dark position="top" class="default-color lighten-1" scrolling>
 		<mdb-navbar-brand class="med-width white-text">
 			<router-link to="/">
-				<QCLogo color="white">DataCheck - Enabling Quality Data</QCLogo>
 			</router-link>
 		</mdb-navbar-brand>
 		<navbar-collapse>
 			<NavLinks v-if="isLoggedIn" />
 			<navbar-nav right>
-				<WelcomeLogout v-if="isLoggedIn" :user="getUser" />
-				<LoginForm v-else v-on:error="loginError" />
 			</navbar-nav>
 			<!-- Search form -->
 		</navbar-collapse>
@@ -17,11 +14,10 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
-import QCLogo from './QCLogo.vue'
-import LoginForm from './LoginForm.vue'
-import WelcomeLogout from './WelcomeLogout.vue'
-import NavLinks from './NavLinks.vue'
+import QCLogo from '~/components/QCLogo.vue'
+import LoginForm from '~/components/LoginForm.vue'
+import WelcomeLogout from '~/components/WelcomeLogout.vue'
+import NavLinks from '~/components/NavLinks.vue'
 import {
 	Badge,
 	Btn,
@@ -32,12 +28,12 @@ import {
 	NavbarCollapse,
 	NavbarNav,
 	Row,
-} from 'mdbvue'
+} from '~/node_modules/mdbvue'
 
 export default {
 	name: 'QCHeader',
-	components: {
-		mdbNavbar,
+  components: {
+    mdbNavbar,
 		NavbarNav,
 		NavbarCollapse,
 		mdbNavbarBrand,
@@ -46,21 +42,22 @@ export default {
 		Row,
 		Fa,
 		Btn,
-		QCLogo,
-		LoginForm,
-		WelcomeLogout,
-		NavLinks,
-	},
+  },
 	data() {
 		return {
 			isError: false,
 		}
 	},
 	computed: {
-		...mapGetters(['getUser']),
-
+		getUser() {
+			const user = {
+				firstName: 'Freddie',
+				lastName: 'Valone',
+				id: 1,
+			}
+		},
 		isLoggedIn() {
-			return this.$store.getters.isLoggedIn
+			return true
 		},
 	},
 	methods: {

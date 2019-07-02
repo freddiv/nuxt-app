@@ -9,19 +9,23 @@
 
 <script>
 import {mdbBtn} from 'mdbvue'
-import {mapActions, mapGetters} from 'vuex'
 
 export default {
 	name: 'WelcomeLogout',
 	components: {mdbBtn},
 	computed: {
-		...mapGetters(['getUser', 'unallocatedRecordsList', 'allocationColumnDefs', 'allocationsList']),
+		getUser() {
+			const user = {
+				firstName: 'Freddie',
+				lastName: 'Valone',
+				id: 1,
+			}
+		},
 		userName() {
 			var display = this.getUser
 			return `Hello ${this.getUser.first_name}`
 		},
 	},
-	methods: mapActions(['logout']),
 }
 </script>
 

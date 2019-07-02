@@ -37,8 +37,7 @@
 </template>
 
 <script>
-import {mdbBtn} from 'mdbvue'
-import {mapActions} from 'vuex'
+import {mdbBtn} from '~/node_modules/mdbvue'
 
 
 export default {
@@ -54,33 +53,13 @@ export default {
 		}
 	},
 	methods: {
-		...mapActions(['login',
-			'fetchDomains',
-			'fetchSources',
-			'fetchExpertise',
-			'getQcFlagValues',
-			'getQualityFlagValues',
-			'getFailureReasons',
-			'getDocumentFileTypes',
-			'getDocumentTypes',
-			'getDocumentSourceTypes',
-		]),
-		tryLogin(ev) {
+			tryLogin(ev) {
 			ev.preventDefault()
 			ev.target.classList.add('was-validated')
 			if (this.$refs.form.checkValidity()) {
 				this.isPending = true
 				this.login(this.userLogin).then(() => {
 					this.$notify.success({message: 'Logged In!', position: 'bottom right', timeOut: 5000})
-					this.fetchDomains()
-					this.fetchSources()
-					this.fetchExpertise()
-					this.getQcFlagValues()
-					this.getDocumentTypes()
-					this.getDocumentFileTypes()
-					this.getDocumentSourceTypes()
-					this.getQualityFlagValues()
-					this.getFailureReasons()
 				}).catch(err => {
 					this.$notify.error({message: err.message, position: 'bottom right', timeOut: 5000})
 				}).finally(() => {

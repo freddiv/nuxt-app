@@ -4,7 +4,52 @@
   </div>
 </template>
 
-<style>
+<script>
+  import '~/node_modules/ag-grid-community/dist/styles/ag-grid.css'
+  import '~/node_modules/ag-grid-community/dist/styles/ag-theme-balham.css'
+  import '~/node_modules/material-design-icons/iconfont/material-icons.css'
+  import '~/node_modules/bootstrap-css-only/css/bootstrap.min.css'
+  import '~/assets/styles/_custom-variables.scss'
+  import '~/assets/styles/config-variables.scss'
+  import { polyfill } from 'es6-promise'
+  polyfill()
+  import 'es6-promise/auto'
+  import '~/node_modules/mdbvue/build/css/mdb.css'
+  import 'animate.css/animate.min.css'
+  import Vue from 'vue'
+  import {Notify} from '~/node_modules/mdbvue'
+
+  Vue.use(Notify)
+
+export default {
+  	name: 'defaultLayout',
+  }
+</script>
+
+<style lang="scss">
+@import "~/assets/styles/config-variables.scss";
+@import "~/assets/styles/imported-variables.scss";
+@import "~/assets/styles/_custom-variables.scss";
+
+p.h3 {
+	display: block !important;
+	margin-top: .8rem !important;
+}
+.flyout {
+	display:         flex;
+	flex-direction:  column;
+	min-height:      100vh;
+	justify-content: space-between;
+}
+
+.active {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.page {
+	position: fixed;
+	width:    inherit;
+}
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
