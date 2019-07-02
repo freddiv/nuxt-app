@@ -1,5 +1,16 @@
 <template>
   <div class="container">
+    <mdb-navbar dark position="top" class="default-color lighten-1" scrolling>
+		<mdb-navbar-brand class="med-width white-text">
+			<nuxt-link to="/">
+				DataCheck - Enabling Quality Data
+			</nuxt-link>
+		</mdb-navbar-brand>
+		<navbar-collapse>
+    <navbar-nav right>
+		</navbar-nav>			<!-- Search form -->
+		</navbar-collapse>
+	</mdb-navbar>
     <div>
       <logo />
       <h1 class="title">
@@ -48,10 +59,30 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+import {
+	Badge,
+	Btn,
+	Column,
+	Fa,
+	mdbNavbar,
+	mdbNavbarBrand,
+	NavbarCollapse,
+	NavbarNav,
+	Row,
+} from '~/node_modules/mdbvue'
 
 export default {
   components: {
-    Logo
+    Logo,
+    mdbNavbar,
+		NavbarNav,
+		NavbarCollapse,
+		mdbNavbarBrand,
+		Column,
+		Badge,
+		Row,
+		Fa,
+		Btn,
   },
   data() {
     return {
