@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-  <QCHeader />
     <div>
       <logo />
       <h1 class="title">
@@ -48,25 +47,10 @@
 </template>
 
 <script>
-import '~/node_modules/ag-grid-community/dist/styles/ag-grid.css'
-import '~/node_modules/ag-grid-community/dist/styles/ag-theme-balham.css'
-import '~/node_modules/material-design-icons/iconfont/material-icons.css'
-import '~/node_modules/bootstrap-css-only/css/bootstrap.min.css'
-import '~/assets/styles/_custom-variables.scss'
-import '~/assets/styles/config-variables.scss'
-import { polyfill } from 'es6-promise'
-polyfill()
-import 'es6-promise/auto'
-import '~/node_modules/mdbvue/build/css/mdb.css'
-import 'animate.css/animate.min.css'
-import {Notify} from '~/node_modules/mdbvue'
 import Logo from '~/components/Logo.vue'
-import QCHeader from '~/components/QCHeader.vue'
-
 export default {
   components: {
     Logo,
-    QCHeader,
   },
   data() {
     return {

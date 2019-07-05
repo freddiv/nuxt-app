@@ -5,24 +5,24 @@
 				<img class="img-fluid w-100 h-100 ml-2" alt="Responsive image" src="../assets/epa-logo-1.png">
 			</div>
 			<div class="d-flex flex-row justify-content-around w-75">
-				<router-link to="/about" class="info-ic">
+				<nuxt-link to="/about" class="info-ic">
 					<mdb-tooltip :options="{placement: 'top'}">
-						<div class="tooltip">About Data Accuracy Tool</div>
+						 <span slot="tip">About Data Accuracy Tool</span>
 						<i slot="reference" class="fa fa-info-circle white-text mr-md-5 mr-3 fa-3x"/>
 					</mdb-tooltip>
-				</router-link>
-				<router-link to="/help" class="info-ic">
+				</nuxt-link>
+				<nuxt-link to="/help" class="info-ic">
 					<mdb-tooltip :options="{placement: 'top'}">
-						<div class="tooltip">Data Accuracy Tool Help</div>
+						 <span slot="tip">Data Accuracy Tool Help</span>
 						<i slot="reference" class="far fa-question-circle white-text mr-md-5 mr-3 fa-3x"/>
 					</mdb-tooltip>
-				</router-link>
-				<router-link to="/contact" class="info-ic">
+				</nuxt-link>
+				<nuxt-link to="/contact" class="info-ic">
 					<mdb-tooltip :options="{placement: 'top'}">
-						<div class="tooltip">Contact us</div>
+						 <span slot="tip">Contact us</span>
 						<i slot="reference" class="fa fa-at white-text mr-md-5 mr-3 fa-3x"/>
 					</mdb-tooltip>
-				</router-link>
+				</nuxt-link>
 			</div>
 		</div>
 	</Footer>
@@ -30,12 +30,11 @@
 
 
 <script>
-import {mapActions, mapGetters} from 'vuex'
-import router from '../router'
+
 import {
 	Footer,
 	mdbTooltip,
-} from 'mdbvue'
+} from '~/node_modules/mdbvue'
 
 export default {
 	name: 'QCFooter',
@@ -49,22 +48,20 @@ export default {
 		}
 	},
 	computed: {
-		...mapGetters(['getUser', 'columnDefs', 'isError']),
 		isError() {
 			return this.error
 		},
 		isLoggedIn() {
-			return this.$store.getters.isLoggedIn
+			return true
 		},
 	},
 	methods: {
 		close() {
-			localStorage.removeItem('error')
-			this.error = null
+
 		},
 	},
 	onRender() {
-		this.error = window.localStorage.getItem('error')
+
 	},
 }
 </script>

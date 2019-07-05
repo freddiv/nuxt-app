@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<span class="white-text font-weight-bold mr-5">{{ userName}} {{ getUser.last_Name}} </span>
+		<span class="white-text font-weight-bold mr-5">{{ welcome}} </span>
 		<mdb-btn icon="user" iconClass="pr-2" iconLeft @click.native="logout">
 			<span class="white-text font-weight-bold">Logout</span>
 		</mdb-btn>
@@ -14,16 +14,14 @@ export default {
 	name: 'WelcomeLogout',
 	components: {mdbBtn},
 	computed: {
-		getUser() {
+		welcome() {
 			const user = {
-				firstName: 'Freddie',
-				lastName: 'Valone',
+				first_name: 'Freddie',
+				last_name: 'Valone',
 				id: 1,
 			}
-		},
-		userName() {
-			var display = this.getUser
-			return `Hello ${this.getUser.first_name}`
+			const welcome =  `Welcome ${user.first_name}  ${user.last_name}`
+			return welcome
 		},
 	},
 }

@@ -49,7 +49,7 @@ export default {
 	},
 	computed: {
 		isAdmin() {
-			return false
+			return true
 		},
 	},
 }

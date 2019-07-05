@@ -1,7 +1,8 @@
 <template>
   <div> 
     <QCHeader />
-    <main :style="{marginTop: '53px', minHeight: '750px'}">
+    <main :style="{marginTop: '83px', minHeight: '750px'}">
+        <h3>Users</h3>
       <nuxt />
     </main> 
     <QCFooter />

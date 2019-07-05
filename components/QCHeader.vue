@@ -1,12 +1,14 @@
 <template>
 	<mdb-navbar dark position="top" class="default-color lighten-1" scrolling>
 		<mdb-navbar-brand class="med-width white-text">
-			<router-link to="/">
-			</router-link>
+			<nuxt-link to="/">
+				<QCLogo color="white">DataCheck - Enabling Quality Data</QCLogo>
+			</nuxt-link>
 		</mdb-navbar-brand>
 		<navbar-collapse>
 			<NavLinks v-if="isLoggedIn" />
 			<navbar-nav right>
+				<WelcomeLogout v-if="isLoggedIn" />
 			</navbar-nav>
 			<!-- Search form -->
 		</navbar-collapse>
@@ -35,6 +37,10 @@ export default {
   components: {
     mdbNavbar,
 		NavbarNav,
+		NavLinks,
+		LoginForm,
+		WelcomeLogout,
+		QCLogo,
 		NavbarCollapse,
 		mdbNavbarBrand,
 		Column,
