@@ -1,12 +1,14 @@
-import { configure } from '@storybook/vue';
+import {
+  configure
+} from '@storybook/vue';
 
 import Vue from 'vue';
-// import Vuex from 'vuex'; // Vue plugins
+import Vuex from 'vuex'; // Vue plugins
+import '../assets/index.css'
 
-const req = require.context('../components', true, /\.story\.js$/)
+const req = require.context('../components', true, /\.stories\.js$/)
 
 function loadStories() {
-  console.log(req)
   req.keys().forEach((filename) => req(filename))
 }
 
