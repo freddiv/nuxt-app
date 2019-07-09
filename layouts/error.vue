@@ -1,14 +1,18 @@
 <template>
-	<div class="container-fluid mt-5">
-		This is the default error page.
-	</div>
+  <div class="container">
+    
+    <p class="h3 blue-text">Error <br>
+    statusCode: {{ error.statusCode}}<br>
+      message: {{error.message}}</p>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'error',
-    created() {
-        console.log(this)
+  props: ['error'],
+  layout: 'blog' ,
+  created() {
+        console.log(this.error.message)
     },
 }
 </script>

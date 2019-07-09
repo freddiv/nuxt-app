@@ -1,6 +1,18 @@
 
 export default {
   mode: "spa",
+  messages: {
+    loading: 'Loading...',
+    error_404: 'This page could not be found',
+    server_error: 'Server error',
+    nuxtjs: 'Nuxt.js',
+    back_to_home: 'Back to the home page',
+    server_error_details:
+      'An error occurred in the application and your page could not be served. If you are the application owner, check your logs for details.',
+    client_error: 'Error',
+    client_error_details:
+      'An error occurred while rendering the page. Check developer tools console for details.'
+  },
   /*
    ** Headers of the page
    */
@@ -25,14 +37,19 @@ export default {
    ** Global CSS
    */
   css: [
-    "@/assets/styles/_custom-variables.scss",
-    // SCSS file in the project
-    "@/assets/styles/config-variables.scss"
-  ],
+      '~node_modules/ag-grid-community/dist/styles/ag-grid.css',
+      '~node_modules/ag-grid-community/dist/styles/ag-theme-balham.css',
+      '~node_modules/material-design-icons/iconfont/material-icons.css',
+      '~node_modules/bootstrap-css-only/css/bootstrap.min.css',
+      '~assets/styles/global-styles.scss',          
+      '~node_modules/mdbvue/build/css/mdb.css', 
+      'animate.css/animate.min.css',
+      '~node_modules/mdbvue',
+    ],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["~/plugins/repository"],
+  plugins: ["~plugins/repository"],
   /*
    ** Nuxt.js modules
    */

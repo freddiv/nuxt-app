@@ -13,8 +13,7 @@ export default {
         if (validated) {
            return true 
         }
-        const errorMessage = `The value that you submitted, ${data.params.id} did not pass validation.`
-        console.log(errorMessage)
+        //console.log(error)
         return false
     }
 }
