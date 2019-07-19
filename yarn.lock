@@ -1242,7 +1242,7 @@
     axios-retry "^3.1.2"
     consola "^2.7.1"
 
-"@nuxtjs/font-awesome@1.04.1":
+"@nuxtjs/font-awesome@1.0.4":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@nuxtjs/font-awesome/-/font-awesome-1.0.4.tgz#ffd543970fbedb41859129b52050020c676bb7b4"
   dependencies:

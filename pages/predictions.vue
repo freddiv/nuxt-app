@@ -1,11 +1,11 @@
 <template>
   <div class="container-fluid mt-5">
-    <h2>Contact Us</h2>
+    <h2>Predictions</h2>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Contact"
+  name: "Predictions"
 };
 </script>
